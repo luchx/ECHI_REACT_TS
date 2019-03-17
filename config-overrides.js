@@ -4,9 +4,9 @@ const path = require('path');
 module.exports = override(
     // 配置路径别名
     addWebpackAlias({
-        components: path.resolve(__dirname, 'src/components'),
-        utils: path.resolve(__dirname, 'src/utils'),
-        actions: path.resolve(__dirname, 'src/actions')
+        '@': path.resolve(__dirname, 'src'),
+        '@styles': path.resolve(__dirname, 'src/assets/styles'),
+        '@img': path.resolve(__dirname, 'src/assets/images')
     }),
     //按需加载antd
     fixBabelImports('import', {
