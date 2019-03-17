@@ -1,3 +1,4 @@
+import React from 'react';
 import Loadable from 'react-loadable'
 import { Redirect } from 'react-router-dom'
 
@@ -5,9 +6,8 @@ import { Redirect } from 'react-router-dom'
 // 详情请参考这一篇文章：https://blog.csdn.net/China_Guanq/article/details/82194928#loadable
 const loadable = (filename: string) => Loadable({
     loader: () => import(`@/views/${filename}`),
-    loading: () => ('')
+    loading: (): any => ('')
 });
-
 
 //路由配置对象
 const routers = [
@@ -19,6 +19,10 @@ const routers = [
     {
         path: '/haha',
         component: loadable('Test')
+    }, 
+    {
+        path: '/test',
+        component: () => <Redirect to="/haha" />
     },
     {
         path: '*',
