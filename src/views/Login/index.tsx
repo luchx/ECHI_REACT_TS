@@ -67,8 +67,12 @@ class Login extends Component<any, ICheckState> {
             return Toast.info('您的号码输入错误', 2);
         }
         ApiGetVerifyCode(phone).then((result: any) => {
-            this.getLeftTime();
-            console.log(result)
+            if (result.code === 0) {
+                Toast.info('验证码为:' + result.data, 2);
+                this.getLeftTime();
+            }else {
+                Toast.info(result.message, 2);
+            }
         }).catch((err: any) => {
             console.log(err);
         });
