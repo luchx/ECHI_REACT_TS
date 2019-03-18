@@ -3,7 +3,8 @@ import axios from './config';
 // HTTP工具类
 export default class Http {
   public static async request(params: any) {
-    return await axios(params);
+    const result = await axios(params);
+    return result.data;
   }
 
   /**
