@@ -20,7 +20,9 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start:local": "react-app-rewired start --mode development.local",
+    "build": "react-app-rewired build --report",
+    "build:prod": "react-app-rewired build --mode production",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

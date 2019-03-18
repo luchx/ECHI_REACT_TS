@@ -3,6 +3,7 @@ import './index.scss';
 import Logo from '@img/logo.svg';
 import { Button, Toast } from 'antd-mobile'; 
 import { TestPhone } from '../../utils/validator';
+import { ApiGetVerifyCode } from '../../api';
 
 export interface ICheckState {
     focusName: string;
@@ -65,7 +66,12 @@ class Login extends Component<any, ICheckState> {
         if (!TestPhone(phone)) {
             return Toast.info('您的号码输入错误', 2);
         }
-        this.getLeftTime();
+        ApiGetVerifyCode(phone).then((result: any) => {
+            this.getLeftTime();
+            console.log(result)
+        }).catch((err: any) => {
+            console.log(err);
+        });
     }
 
     // 倒计时获取剩余时间

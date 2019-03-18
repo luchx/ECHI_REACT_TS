@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
 // 超时重新请求配置
-const VUE_APP_URL = process.env.VUE_APP_URL;
+const VUE_APP_URL = process.env.REACT_APP_URL;
 const axiosConfig: AxiosRequestConfig = {
   baseURL: VUE_APP_URL,
   // 请求后的数据处理

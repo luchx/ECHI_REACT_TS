@@ -4,6 +4,22 @@
 > 1. 基于React + React-router-dom + redux + React-redux + React-redux-router + Typescript + Webpack4构建的企业级应用项目;
 > 2. 开发时请确保你已了解或掌握以上技术要求,然后你就可以愉快的玩耍了;
 
+## 从新建项目到设置打包环境
+```
+1. create-react-app my-app
+3. 新建各个环境的文件，例如：.env.development .env.production
+4. 在 package.json 中设置打包命令，例如：build:development build:test build:production，在执行命令的语句中设置 mode 环境，例如：--mode test
+```
+
+## 关于环境变量的注意事项
+* 环境名应该与环境文件统一
+* 环境文件放置根目录下
+* 除了 `PUBLIC_URL` 和 `NODE_ENV` 其他环境变量使用 `REACT_APP_` 开头
+* 另外还设定本地运行环境`local`,你可以在项目拉取下来后补充 `.env.development.local` 文件,并添加如下信息并替换你自己所在服务器的域名及端口;
+例如 :
+    NODE_ENV='development'
+    REACT_APP_URL='http://localhost:8080'  
+
 ## 工程目录结构
 ```bash
 src：项目源码。开发的时候代码写在这里。
