@@ -1,8 +1,12 @@
 import service from '../axios/service';
 
 export function ApiGetVerifyCode(phone: string) {
-    let url = `api/login/getCode/${phone}`;
+    let url = 'api/login/getCode';
+    let data = {
+        phone
+    }
     return service.get({
-        url
+        url,
+        data
     })
 }
