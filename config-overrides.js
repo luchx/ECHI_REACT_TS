@@ -15,7 +15,6 @@ module.exports = override(
     // })]),
     // 配置路径别名
     addWebpackAlias({
-        '@': path.resolve(__dirname, 'src'),
         '@styles': path.resolve(__dirname, 'src/assets/styles'),
         '@img': path.resolve(__dirname, 'src/assets/images')
     }),
