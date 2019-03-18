@@ -14,10 +14,6 @@
     margin-top: px2em(40);
   }
 
-  .login-verify-bottom {
-    margin-top: px2em(50);
-  }
-
   // 输入项组件
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
@@ -27,7 +23,10 @@
   }
 
   .login-verify-item {
-    margin-bottom: px2em(20);
+    margin-bottom: px2em(30);
+    &:first-child {
+      margin-bottom: px2em(20);
+    }
 
     label {
       font-size: px2em(14);
