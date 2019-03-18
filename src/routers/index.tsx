@@ -18,6 +18,10 @@ const routers = [
         component: () => <Redirect to="/haha" />
     },
     {
+        path: '/login',
+        component: loadable('Login')
+    }, 
+    {
         path: '/haha',
         component: loadable('Test')
     }, 

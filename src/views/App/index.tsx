@@ -5,21 +5,23 @@ import routers from '../../routers';
 class App extends Component {
   render() {
     return (
-      <HashRouter>
-        <Switch>
-          {
-            routers.map((route, index) => {
-              return (
-                <Route
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component} />
-              )
-            })
-          }
-        </Switch>
-      </HashRouter>
+      <div className="wrapper">
+        <HashRouter>
+          <Switch>
+            {
+              routers.map((route, index) => {
+                return (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.component} />
+                )
+              })
+            }
+          </Switch>
+        </HashRouter>
+      </div>
     );
   }
 }

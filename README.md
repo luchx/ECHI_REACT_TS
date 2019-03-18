@@ -1,7 +1,7 @@
 <h1 align="center">开发须知</h1>
 
 ## 技术栈及使用要求
-> 1. 基于React + React-router-dom + React-redux + React-redux-router构建的企业级应用项目;
+> 1. 基于React + React-router-dom + redux + React-redux + React-redux-router + Typescript + Webpack4构建的企业级应用项目;
 > 2. 开发时请确保你已了解或掌握以上技术要求,然后你就可以愉快的玩耍了;
 
 ## 工程目录结构
