@@ -42,13 +42,15 @@ class Login extends Component<any, ICheckState> {
         });
     }
 
-    inputFocus(key: any) {
+    // 输入框获取焦点
+    handleInputFocus(key: any) {
         this.setState({
             focusName: key
         })
     }
 
-    inputBlur() {
+    // 输入框失去焦点
+    handleInputBlur() {
         this.setState({
             focusName: ''
         })
@@ -114,8 +116,8 @@ class Login extends Component<any, ICheckState> {
                             <input type="number" ref="phone" placeholder="请输入手机号码" autoFocus
                                 value={this.state.phone} 
                                 onChange={(event) => this.handlePhoneChange(event)} 
-                                onFocus={() => this.inputFocus('phone')} 
-                                onBlur={() => this.inputBlur()} />
+                                onFocus={() => this.handleInputFocus('phone')} 
+                                onBlur={() => this.handleInputBlur()} />
                         </div>
                     </div >
                     <div className="login-verify-item">
@@ -124,8 +126,8 @@ class Login extends Component<any, ICheckState> {
                             <input type="number" placeholder="请输入验证码" 
                                 value={this.state.code} 
                                 onChange={(event) => this.handleCodeChange(event)} 
-                                onFocus={() => this.inputFocus('code')}
-                                onBlur={() => this.inputBlur()}/>
+                                onFocus={() => this.handleInputFocus('code')}
+                                onBlur={() => this.handleInputBlur()}/>
                             <div className="login-verify-btn">
                                 <Button type="primary" size="small" 
                                     onClick={() => this.handleSendCode()}
