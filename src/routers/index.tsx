@@ -15,20 +15,12 @@ const routers = [
     {
         path: '/',
         exact: true,
-        component: () => <Redirect to="/haha" />
+        component: () => <Redirect to="/login" />
     },
     {
         path: '/login',
         component: loadable('Login')
     }, 
-    {
-        path: '/haha',
-        component: loadable('Test')
-    }, 
-    {
-        path: '/home',
-        component: loadable('Home')
-    },
     {
         path: '*',
         component: loadable('Exception/404')

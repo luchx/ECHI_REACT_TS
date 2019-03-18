@@ -1,0 +1,95 @@
+@import '../../assets/styles/mixin.scss';
+@import '../../assets/styles/theme.scss';
+
+.login-wrapper {
+  padding: 0 px2em(40);
+
+  .login-verify-logo {
+    width: px2em(100);
+    padding-top: px2em(60);
+    margin: 0 auto px2em(20);
+  }
+
+  .login-verify-check {
+    margin-top: px2em(40);
+  }
+
+  .login-verify-bottom {
+    margin-top: px2em(50);
+  }
+
+  // 输入项组件
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  .login-verify-item {
+    margin-bottom: px2em(20);
+
+    label {
+      font-size: px2em(14);
+    }
+
+    .login-verify-input {
+      position: relative;
+      display: flex;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        border-bottom: 1px solid $color-active;
+        transition: width 0.5s ease-in;
+        transform-origin: right;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        border-bottom: 1px solid $color-active;
+        transition: width 0.5s ease-in;
+        transform-origin: left;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        height: px2em(40);
+        font-size: px2em(12);
+        padding: px2em(8) px2em(5);
+        border: none;
+        border-bottom: 1px solid $color-null;
+      }
+
+      .login-verify-btn {
+        position: absolute;
+        top: px2em(15);
+        right: 0;
+        display: block;
+        width: px2em(100);
+        font-size: px2em(12);
+      }
+    }
+
+    .login-verify-input.focus {
+      &::after,
+      &::before {
+        width: 50%;
+      }
+    }
+
+    .login-verify-input.check input {
+      padding-right: px2em(110);
+    }
+
+  }
+
+}

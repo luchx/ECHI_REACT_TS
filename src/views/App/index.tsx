@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
+import './index.scss';
 import routers from '../../routers';
 
 class App extends Component {

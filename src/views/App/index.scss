@@ -1,4 +1,67 @@
+@import '../../assets/styles/mixin.scss';
+@import '../../assets/styles/theme.scss';
+
 .wrapper {
+  position: relative;
   display: block;
-  
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+// 字体颜色
+.color-main {
+  color: $color-main;
+}
+
+.color-sub {
+  color: $color-sub;
+}
+
+.color-pale {
+  color: $color-pale;
+}
+
+.color-tips {
+  color: $color-tips;
+}
+
+.color-grey {
+  color: $color-grey;
+}
+
+.color-null {
+  color: $color-default;
+}
+
+.color-success {
+  color: $color-success;
+}
+
+.bg-gradient {
+  background: $color-gradient;
+}
+
+.autoImg {
+  display: block;
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.app-logo {
+  animation: app-logo-spin infinite 5s linear;
+  pointer-events: none;
+}
+
+
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

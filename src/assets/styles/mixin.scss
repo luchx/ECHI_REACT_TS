@@ -1,0 +1,14 @@
+// 基准值，以iphone6为计算单位
+$base: 37.5px;
+
+@function px2em($px, $base-font-size:$base) {
+    @if (unitless($px)) {
+        @return px2em($px + 0px); // That may fail.
+    }
+
+    @else if (unit($px)==rem) {
+        @return $px;
+    }
+
+    @return ($px / $base-font-size) * 1rem;
+}

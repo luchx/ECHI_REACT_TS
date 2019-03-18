@@ -8,10 +8,11 @@ const {
 const path = require('path');
 
 module.exports = override(
-    addTslintLoader(),
-    addPostcssPlugins([require("postcss-px2rem")({
-        remUnit: 37.5
-    })]),
+    // addTslintLoader(),
+    // addPostcssPlugins([require("postcss-px2rem-exclude")({
+    //     "remUnit": 75,
+    //     "exclude": "/node_modules/i"
+    // })]),
     // 配置路径别名
     addWebpackAlias({
         '@': path.resolve(__dirname, 'src'),
