@@ -3,7 +3,7 @@ import './index.scss';
 import Logo from '@img/logo.svg';
 import { Button, Toast } from 'antd-mobile'; 
 import { TestPhone } from '../../utils/validator';
-import { ApiGetVerifyCode } from '../../api';
+import { ApiGetVerifyCode, ApiUserRegister } from '../../api';
 
 export interface ICheckState {
     focusName: string;
@@ -13,6 +13,7 @@ export interface ICheckState {
     sendingCodeText: string;
     leftTime: number;
     handleTimer: any;
+    submitStatus: boolean;
 }
 
 class Login extends Component<any, ICheckState> {
@@ -26,6 +27,7 @@ class Login extends Component<any, ICheckState> {
             sendingCodeText: '',
             leftTime: 120,
             handleTimer: null,
+            submitStatus: false,
         }
     }
 
@@ -57,14 +59,23 @@ class Login extends Component<any, ICheckState> {
         })
     }
 
-    // 发送验证码
-    handleSendCode() {
-        let { phone, code } = this.state;
+    validatePhone(phone: string) {
         if (!phone) {
-            return Toast.info('请输入您的手机号码', 2);
+            Toast.info('请输入您的手机号码', 2);
+            return false;
         }
         if (!TestPhone(phone)) {
             return Toast.info('您的号码输入错误', 2);
+            return false;
+        }
+        return true;
+    }
+
+    // 发送验证码
+    handleSendCode() {
+        let { phone } = this.state;
+        if(!this.validatePhone(phone)) {
+            return;
         }
         ApiGetVerifyCode(phone).then((result: any) => {
             if (result.code === 0) {
@@ -111,6 +122,24 @@ class Login extends Component<any, ICheckState> {
         });
     }
 
+    handleSubmit() {
+        let { phone, code } = this.state;
+        if (!this.validatePhone(phone)) {
+            return;
+        }
+        if(code.length === 0) {
+            return Toast.info('请输入验证码', 2);
+        }
+        ApiUserRegister(phone, code).then((result: any) => {
+            Toast.info(result.message, 2);
+            if (result.code === 0) {
+                
+            }
+        }).catch((err: any) => {
+            console.log(err);
+        });
+    }
+
     render() {
         return (
             <div className="login-wrapper">
@@ -119,7 +148,7 @@ class Login extends Component<any, ICheckState> {
                         <img className="autoImg app-logo" src={Logo} alt="logo" title="logo" />
                     </div>
                 </div>
-                <div className="login-verify-check">
+                <form className="login-verify-check">
                     <div className="login-verify-item">
                         <label>手机号码</label>
                         <div className={this.state.focusName === 'phone' ? 'login-verify-input focus' : 'login-verify-input'}>
@@ -149,12 +178,12 @@ class Login extends Component<any, ICheckState> {
                     </div >
                     <div className="login-verify-bottom">
                         <Button type="primary"
-                            onClick={() => this.handleSendCode()}
-                            disabled={this.state.sendingCodeStatus}>
+                            onClick={() => this.handleSubmit()}
+                            disabled={this.state.submitStatus}>
                             提交
                         </Button>
                     </div>
-                </div >
+                </form>
             </div>
         )
     }
