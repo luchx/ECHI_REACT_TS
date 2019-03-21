@@ -5,13 +5,9 @@ import PropTypes from 'prop-types'
 export interface IState {
     noPage: any
 }
-//定义一个接口规范state的类型  
-export interface IProps {
 
-}
-
-class notMatch extends Component<IProps, IState> {
-    constructor(props: IProps) {
+class notMatch extends Component<any, IState> {
+    constructor(props: any) {
         super(props);
         this.state = {
             noPage: require('@img/404.jpg'),
