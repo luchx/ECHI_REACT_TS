@@ -8,7 +8,7 @@ import service from '../axios/service';
  * @returns
  */
 export function ApiGetVerifyCode(phone: string) {
-    let url = 'api/user/getCode';
+    let url = 'api/member/getCode';
     let data = {
         phone
     }
@@ -26,8 +26,8 @@ export function ApiGetVerifyCode(phone: string) {
  * @param {string} code
  * @returns
  */
-export function ApiUserRegister(phone: string, code: string) {
-    let url = 'api/user/register';
+export function ApiMemberRegister(phone: string, code: string) {
+    let url = 'api/member/register';
     let data = {
         phone,
         code

@@ -5,4 +5,4 @@
  */
 
 // 引入模块接口
-export * from './user';
+export * from './member';

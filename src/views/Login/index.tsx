@@ -3,7 +3,7 @@ import './index.scss';
 import Logo from '@img/logo.svg';
 import { Button, Toast } from 'antd-mobile'; 
 import { TestPhone } from '../../utils/validator';
-import { ApiGetVerifyCode, ApiUserRegister } from '../../api';
+import { ApiGetVerifyCode, ApiMemberRegister } from '../../api';
 
 export interface ICheckState {
     focusName: string;
@@ -130,7 +130,7 @@ class Login extends Component<any, ICheckState> {
         if(code.length === 0) {
             return Toast.info('请输入验证码', 2);
         }
-        ApiUserRegister(phone, code).then((result: any) => {
+        ApiMemberRegister(phone, code).then((result: any) => {
             Toast.info(result.message, 2);
             if (result.code === 0) {
                 
