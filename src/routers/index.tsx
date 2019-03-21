@@ -22,6 +22,10 @@ const routers = [
         component: loadable('Login')
     }, 
     {
+        path: '/member/:id',
+        component: loadable('Member')
+    }, 
+    {
         path: '*',
         component: loadable('Exception/404')
     }

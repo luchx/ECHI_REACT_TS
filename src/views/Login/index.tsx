@@ -61,11 +61,11 @@ class Login extends Component<any, ICheckState> {
 
     validatePhone(phone: string) {
         if (!phone) {
-            Toast.info('请输入您的手机号码', 2);
+            Toast.info('请输入您的手机号码', 2, () => { }, false);
             return false;
         }
         if (!TestPhone(phone)) {
-            return Toast.info('您的号码输入错误', 2);
+            return Toast.info('您的号码输入错误', 2, () => { }, false);
             return false;
         }
         return true;
@@ -79,10 +79,10 @@ class Login extends Component<any, ICheckState> {
         }
         ApiGetVerifyCode(phone).then((result: any) => {
             if (result.code === 0) {
-                Toast.info('验证码为:' + result.data, 2);
+                Toast.info('验证码为:' + result.data, 2, () => { }, false);
                 this.getLeftTime();
             }else {
-                Toast.info(result.message, 2);
+                Toast.info(result.message, 2, () => { }, false);
             }
         }).catch((err: any) => {
             console.log(err);
@@ -128,12 +128,12 @@ class Login extends Component<any, ICheckState> {
             return;
         }
         if(code.length === 0) {
-            return Toast.info('请输入验证码', 2);
+            return Toast.info('请输入验证码', 2, () => {}, false);
         }
         ApiMemberRegister(phone, code).then((result: any) => {
             Toast.info(result.message, 2);
             if (result.code === 0) {
-                
+                this.props.history.replace({pathname: `/member/${result.data.id}`});
             }
         }).catch((err: any) => {
             console.log(err);
