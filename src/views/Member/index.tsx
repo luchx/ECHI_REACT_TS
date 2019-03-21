@@ -65,7 +65,6 @@ class Member extends Component<any, IState> {
                                 <i className="iconfont">&#xe660;</i>
                             </span>
                         </div>
-          
                         <Link className="link" to="transactionQuota" v-show="member.show_quota">
                             <span className="fs-13 ">
                                 <i className="iconfont">&#xe6b6;</i>
@@ -126,7 +125,7 @@ class Member extends Component<any, IState> {
                 </div>
             </div>
                 {/* 底部固定页 */}
-                {/* <bottom-bar></bottom-bar> */}
+                {/* <bottomBar></bottomBar> */}
             </div >
         )
     }
