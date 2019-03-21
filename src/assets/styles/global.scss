@@ -1,0 +1,322 @@
+@charset "UTF-8";
+@import "./theme.scss";
+@import "./mixin.scss";
+
+// 头像,统一为圆型
+.avatar {
+    border-radius: 50%;
+    background-color: $color-null;
+    overflow: hidden;
+}
+
+.autoHeigh {
+    height: auto!important;
+}
+
+.pageDown {
+    transform: rotate(180deg);
+}
+
+/*滚动条美化*/
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #eaf0f2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #bfbfbf;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #ccc;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.cf {
+    display: inline-block;
+    &:after {
+        display: block;
+        content: ".";
+        height: 0;
+        line-height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+// flex 布局
+.flex,
+.flex-col-center,
+.flex-common,
+.flex-row,
+.flex-row-center,
+.flex-w {
+    display: flex !important;
+}
+
+.flex-row {
+    flex-flow: row wrap;
+}
+
+.flex-col-center {
+    justify-content: center;
+}
+
+.flex-row-center {
+    align-items: center;
+}
+
+.flex-w {
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.in-flex,
+.in-flex-common {
+    display: inline-flex !important;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+// 常用样式
+.flex-common,
+.in-flex-common {
+    align-items: center !important;
+}
+
+// 字体居中
+.center {
+    text-align: center;
+}
+
+.contain {
+    padding: 0 px2em(15);
+}
+
+// 字体大小
+@for $f from 10 through 32 {
+    .fs-#{$f} {
+        font-size: #{px2em($f)};
+    }
+}
+
+// 字体粗细
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+.fw-bold {
+    font-weight: bold !important;
+}
+
+.fw-bolder {
+    font-weight: bolder !important;
+}
+
+
+/*内间距*/
+
+.p-15 {
+    padding: px2em(15);
+}
+
+.p-lr-15 {
+    padding-left: px2em(15);
+    padding-right: px2em(15);
+}
+
+.p-tb-15 {
+    padding-top: px2em(15);
+    padding-bottom: px2em(15);
+}
+
+.pt-15 {
+    padding-top: px2em(15);
+}
+
+.pr-15 {
+    padding-right: px2em(15);
+}
+
+.pb-15 {
+    padding-bottom: px2em(15);
+}
+
+.pl-15 {
+    padding-left: px2em(15);
+}
+
+.p-10 {
+    padding: px2em(10);
+}
+
+.p-lr-10 {
+    padding-left: px2em(10);
+    padding-right: px2em(10);
+}
+
+.p-tb-10 {
+    padding-top: px2em(10);
+    padding-bottom: px2em(10);
+}
+
+.pt-10 {
+    padding-top: px2em(10);
+}
+
+.pr-10 {
+    padding-right: px2em(10);
+}
+
+.pb-10 {
+    padding-bottom: px2em(10);
+}
+
+.pl-10 {
+    padding-left: px2em(10);
+}
+
+
+/*外间距*/
+
+.m-15 {
+    margin: px2em(15);
+}
+
+.m-lr-15 {
+    margin-left: px2em(15);
+    margin-right: px2em(15);
+}
+
+.m-tb-15 {
+    margin-top: px2em(15);
+    margin-bottom: px2em(15);
+}
+
+.mt-15 {
+    margin-top: px2em(15);
+}
+
+.mr-15 {
+    margin-right: px2em(15);
+}
+
+.mb-15 {
+    margin-bottom: px2em(15);
+}
+
+.ml-15 {
+    margin-left: px2em(15);
+}
+
+.m-10 {
+    margin: px2em(10);
+}
+
+.m-lr-10 {
+    margin-left: px2em(10);
+    margin-right: px2em(10);
+}
+
+.m-tb-10 {
+    margin-top: px2em(10);
+    margin-bottom: px2em(10);
+}
+
+.mt-10 {
+    margin-top: px2em(10);
+}
+
+.mr-10 {
+    margin-right: px2em(10);
+}
+
+.mb-10 {
+    margin-bottom: px2em(10);
+}
+
+.ml-10 {
+    margin-left: px2em(10);
+}
+
+// 字体颜色
+.color-main {
+    color: $color-main;
+}
+
+.color-sub {
+    color: $color-sub;
+}
+
+.color-pale {
+    color: $color-pale;
+}
+
+.color-tips {
+    color: $color-tips;
+}
+
+.color-grey {
+    color: $color-grey;
+}
+
+.color-null {
+    color: $color-default;
+}
+
+.color-success {
+    color: $color-success;
+}
+
+.bg-gradient {
+    background: $color-gradient;
+}
+
+.autoImg {
+    display: block;
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.borer-1 {
+    border: 1px solid #dddddd;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '@styles/reset.css';
+import '@styles/iconfont.css';
+import '@styles/global.scss';
 import 'react-flexible';
 import * as serviceWorker from './serviceWorker';
 import App from './views/App';

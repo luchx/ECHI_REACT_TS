@@ -1,2 +1,129 @@
 @import '../../assets/styles/mixin.scss';
 @import '../../assets/styles/theme.scss';
+
+.member-center {
+    a {
+        color: inherit;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    background-color: #f3f4f5;
+    height: 100%;
+
+    .d-ib {
+        display: inline-block;
+    }
+
+    .c-aaa {
+        color: #aaa;
+    }
+
+    .margin-left-12 {
+        margin-left: px2em(12);
+    }
+
+    .dot {
+        padding: px2em(3);
+    }
+
+    .up,
+    .value {
+        color: $color-tips;
+    }
+
+    .down,
+    .unit {
+        color: #45b75a;
+    }
+
+    .member-block {
+        color: #fefefe;
+        background: linear-gradient(to right, #e82e3b 41%, #f53b40 62%, #f83e40 72%, #fb403f);
+
+        .social-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: px2em(55);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: px2em(10);
+
+            >* {
+                display: block;
+
+                >div:first-child {
+                    font-size: px2em(13);
+                    margin-bottom: px2em(2);
+                    font-weight: bold;
+                }
+
+                >div:last-child {
+                    font-size: px2em(11);
+                    font-weight: 500;
+                    color: rgba(255, 255, 255, 0.7);
+                }
+
+                width: 50%;
+                text-align: center;
+            }
+        }
+
+        .personal-info {
+            // 个人信息
+            color: #fefefe;
+            // height: px2em(110);
+            width: 100%;
+            padding: px2em(15) px2em(25);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .iconfont {
+                font-size: px2em(15);
+                color: #fff;
+            }
+
+            img {
+                width: px2em(80);
+                height: px2em(80);
+                border: 2px solid #fff;
+            }
+
+            .info {
+                margin-left: px2em(20);
+                display: inline-block;
+
+                div {
+                    line-height: px2em(30);
+                }
+            }
+        }
+    }
+
+    .link-list {
+        .iconfont {
+            color: #666;
+            margin-right: px2em(5);
+        }
+
+        .link-group {
+            margin-bottom: px2em(10);
+            background: #fff;
+        }
+
+        .link {
+            margin-left: px2em(15);
+            padding-right: px2em(15);
+            height: px2em(45);
+            line-height: px2em(45);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+    }
+}
