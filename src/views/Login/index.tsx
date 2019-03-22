@@ -151,7 +151,7 @@ class Login extends Component<any, ICheckState> {
                 <form className="login-verify-check">
                     <div className="login-verify-item">
                         <label>手机号码</label>
-                        <div className={this.state.focusName === 'phone' ? 'login-verify-input focus' : 'login-verify-input'}>
+                        <div className={`login-verify-input ${'phone' === this.state.focusName ? "focus" : null}`}>
                             <input type="number" ref="phone" placeholder="请输入手机号码" autoFocus
                                 value={this.state.phone} 
                                 onChange={(event) => this.handlePhoneChange(event)} 
@@ -161,7 +161,7 @@ class Login extends Component<any, ICheckState> {
                     </div >
                     <div className="login-verify-item">
                         <label>验证码</label>
-                        <div className={this.state.focusName === 'code' ? 'login-verify-input check focus' : 'login-verify-input check'}>
+                        <div className={`login-verify-input ${'code' === this.state.focusName ? "focus" : null}`}>
                             <input type="number" placeholder="请输入验证码" 
                                 value={this.state.code} 
                                 onChange={(event) => this.handleCodeChange(event)} 

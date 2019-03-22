@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 import avatar from '@img/avatar.png';
-
+import BottomBar from '../../components/bottomBar';
+import { ApiGetMemberInfo } from '../../api';
 
 export interface IState {
     member: any;
@@ -20,6 +21,19 @@ class Member extends Component<any, IState> {
             fansNum: 0,
             accountInfo: {}
         }
+    }
+
+    componentDidMount() {
+        let memberId = this.props.match.params.id;
+        console.log(memberId);
+        ApiGetMemberInfo(memberId).then((result: any) => {
+            console.log(result)
+            this.setState({
+                member: result.data.member
+            })
+        }).catch((err: any) => {
+            console.error(err);
+        });
     }
 
     render() {
@@ -74,58 +88,58 @@ class Member extends Component<any, IState> {
                                 { this.state.accountInfo.quota }
                                 <i className="iconfont">&#xe660;</i>
                             </span>
-                    </Link>
-                    <Link className="link" to="/trainRecordList">
-                        <span className="fs-13">
-                            <i className="iconfont">&#xe670;</i>
-                            训练记录
-                        </span>
-                        <span className="fs-12 c-aaa">
-                            <i className="iconfont">&#xe660;</i>
-                        </span>
-                    </Link>
+                        </Link>
+                        <Link className="link" to="/trainRecordList">
+                            <span className="fs-13">
+                                <i className="iconfont">&#xe670;</i>
+                                训练记录
+                            </span>
+                            <span className="fs-12 c-aaa">
+                                <i className="iconfont">&#xe660;</i>
+                            </span>
+                        </Link>
+                    </div>
+                    <div className="link-group">
+                        <Link className="link" to="/joinUs">
+                            <span className="fs-13">
+                                <i className="iconfont">&#xe6c1;</i>
+                                加入Oncycle
+                            </span>
+                            <span className="fs-12 c-aaa">
+                                <i className="iconfont">&#xe660;</i>
+                            </span>
+                        </Link>
+                        <Link className="link" to="/questions">
+                            <span className="fs-13">
+                                <i className="iconfont">&#xe6c2;</i>
+                                常见问题
+                            </span>
+                            <span className="fs-12 c-aaa">
+                                <i className="iconfont">&#xe660;</i>
+                            </span>
+                        </Link>
+                        <Link className="link" to="/serviceTerms">
+                            <span className="fs-13">
+                                <i className="iconfont">&#xe6c4;</i>
+                                服务条款
+                            </span>
+                            <span className="fs-12 c-aaa">
+                                <i className="iconfont">&#xe660;</i>
+                            </span>
+                        </Link>
+                        <Link className="link" to="/contactUs">
+                            <span className="fs-13">
+                                <i className="iconfont">&#xe6c3;</i>
+                                联系我们
+                            </span>
+                            <span className="fs-12 c-aaa">
+                                <i className="iconfont">&#xe660;</i>
+                            </span>
+                        </Link>
+                    </div>
                 </div>
-                <div className="link-group">
-                    <Link className="link" to="/joinUs">
-                        <span className="fs-13">
-                            <i className="iconfont">&#xe6c1;</i>
-                            加入Oncycle
-                        </span>
-                        <span className="fs-12 c-aaa">
-                            <i className="iconfont">&#xe660;</i>
-                        </span>
-                    </Link>
-                    <Link className="link" to="/questions">
-                        <span className="fs-13">
-                            <i className="iconfont">&#xe6c2;</i>
-                            常见问题
-                        </span>
-                        <span className="fs-12 c-aaa">
-                            <i className="iconfont">&#xe660;</i>
-                        </span>
-                    </Link>
-                    <Link className="link" to="/serviceTerms">
-                        <span className="fs-13">
-                            <i className="iconfont">&#xe6c4;</i>
-                            服务条款
-                        </span>
-                        <span className="fs-12 c-aaa">
-                            <i className="iconfont">&#xe660;</i>
-                        </span>
-                    </Link>
-                    <Link className="link" to="/contactUs">
-                        <span className="fs-13">
-                            <i className="iconfont">&#xe6c3;</i>
-                            联系我们
-                        </span>
-                        <span className="fs-12 c-aaa">
-                            <i className="iconfont">&#xe660;</i>
-                        </span>
-                    </Link>
-                </div>
-            </div>
                 {/* 底部固定页 */}
-                {/* <bottomBar></bottomBar> */}
+                <BottomBar></BottomBar>
             </div >
         )
     }

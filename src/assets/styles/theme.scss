@@ -7,6 +7,11 @@ $hd: 1px; // 基本单位
   基准颜色
 */
 
+// 底部高度
+$bottomHeight: px2em(50);
+//底部支撑高度
+$subHeight: px2em(65);
+
 //导航条颜色
 $navbarColor: #fff;
 $navbarBgColor: #2a2b2f;

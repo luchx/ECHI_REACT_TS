@@ -37,3 +37,17 @@ export function ApiMemberRegister(phone: string, code: string) {
         data
     })
 }
+
+/**
+ * 注册用户
+ *
+ * @export
+ * @param {string} memberId
+ * @returns
+ */
+export function ApiGetMemberInfo(memberId: any) {
+    let url = `api/member/getInfo/${memberId}`;
+    return service.get({
+        url
+    })
+}
