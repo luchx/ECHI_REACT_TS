@@ -1,0 +1,124 @@
+@import '../../assets/styles/mixin.scss';
+@import '../../assets/styles/theme.scss';
+
+.loading-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+
+    .loading-spinner {
+        top: 50%;
+        margin-top: -21px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+
+        .loading-text {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}
+
+@-webkit-keyframes antSpinMove {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes antSpinMove {
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes antRotate {
+    to {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg);
+    }
+}
+
+@keyframes antRotate {
+    to {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg);
+    }
+}
+
+.loading-dot {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+
+    &.loading-dot-small {
+        width: 20px;
+        height: 20px;
+
+        i {
+            width: 9px;
+            height: 9px;
+        }
+    }
+}
+
+.loading-dot i {
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: #1ab394;
+    -webkit-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    transform: scale(0.75);
+    display: block;
+    position: absolute;
+    opacity: 0.3;
+    -webkit-animation: antSpinMove 1s infinite linear alternate;
+    animation: antSpinMove 1s infinite linear alternate;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.loading-dot i:nth-child(1) {
+    left: 0;
+    top: 0;
+}
+
+.loading-dot i:nth-child(2) {
+    right: 0;
+    top: 0;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.loading-dot i:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.loading-dot i:nth-child(4) {
+    left: 0;
+    bottom: 0;
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+
+.loading-dot-spin {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-animation: antRotate 1.2s infinite linear;
+    animation: antRotate 1.2s infinite linear;
+}

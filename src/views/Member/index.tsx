@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 import avatar from '@img/avatar.png';
-import BottomBar from '../../components/bottomBar';
+import BottomBar from '../../components/BottomBar';
 import { ApiGetMemberInfo } from '../../api';
 
 export interface IState {
@@ -25,9 +25,7 @@ class Member extends Component<any, IState> {
 
     componentDidMount() {
         let memberId = this.props.match.params.id;
-        console.log(memberId);
         ApiGetMemberInfo(memberId).then((result: any) => {
-            console.log(result)
             this.setState({
                 member: result.data.member
             })
