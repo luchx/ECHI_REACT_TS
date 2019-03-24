@@ -34,7 +34,12 @@ const routers = [
     }, 
     {
         path: '/member/:id',
+        exact: true,
         component: loadable('Member')
+    }, 
+    {
+        path: '/member/info/:id',
+        component: loadable('Member/children/Info')
     }, 
     {
         path: '*',

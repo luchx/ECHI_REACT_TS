@@ -39,7 +39,7 @@ export function ApiMemberLogin(phone: string, code: string) {
 }
 
 /**
- * 注册用户
+ * 获取用户信息
  *
  * @export
  * @param {string} memberId
@@ -49,5 +49,25 @@ export function ApiGetMemberInfo(memberId: any) {
     let url = `api/member/getInfo/${memberId}`;
     return service.get({
         url
+    })
+}
+
+/**
+ * 修改用户信息
+ *
+ * @export
+ * @param {*} memberId
+ * @param {*} modify
+ * @returns
+ */
+export function ApiModifyMember(memberId: any, modify: any) {
+    let url = 'api/member/modify';
+    const data = {
+        id: memberId,
+        ...modify
+    }
+    return service.put({
+        url,
+        data
     })
 }

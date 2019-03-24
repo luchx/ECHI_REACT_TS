@@ -1,0 +1,37 @@
+@import '@styles/mixin.scss';
+@import '@styles/theme.scss';
+
+.member-info {
+    height: 100%;
+    background-color: #f3f4f5;
+    a:hover {
+        text-decoration: none;
+    }
+    .avastar {
+        height: px2em(30);
+        width: px2em(30);
+        margin-right: 10px;
+    }
+    .value-unchangable {
+        display: inline-flex;
+        align-items: center;
+    }
+    .link-group {
+        margin-bottom: px2em(10);
+        background: #fff;
+    }
+
+    .link {
+        margin-left: px2em(15);
+        padding-right: px2em(15);
+        height: px2em(45);
+        line-height: px2em(45);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #333;
+        &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+        }
+    }
+}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
-import avatar from '@img/avatar.png';
 import BottomBar from '../../components/BottomBar';
 import { ApiGetMemberInfo } from '../../api';
 
@@ -27,7 +26,7 @@ class Member extends Component<any, IState> {
         let memberId = this.props.match.params.id;
         ApiGetMemberInfo(memberId).then((result: any) => {
             this.setState({
-                member: result.data.member
+                member: result.data
             })
         }).catch((err: any) => {
             console.error(err);
@@ -35,19 +34,20 @@ class Member extends Component<any, IState> {
     }
 
     render() {
+        const member = this.state.member;
         return (
             <div className="member-center">
                 <div className="member-block">
-                    <Link to="/memberInfo">
+                    <Link to={`/member/info/${member.id}`}>
                         <div className="personal-info">
                             <div className="in-flex-common">
-                                <img src={this.state.member.avatar || avatar} className="avatar" />
+                                <img src={member.avatar} className="avatar" />
                                     <div className="info">
-                                    <div className="fs-20 fw-bold">{ this.state.member.nick_name || '请设置昵称' }</div>
+                                    <div className="fs-20 fw-bold">{ member.nickname }</div>
                                     <div className="fs-11">
-                                        <span>鞋码{ this.state.member.shoe_size }</span>
+                                        <span>鞋码{ member.shoeSize }</span>
                                         <span className="dot">•</span>
-                                        <span>座位高度{ this.state.member.seat_height }</span>
+                                        <span>座位高度{ member.seatHeight }</span>
                                     </div>
                                 </div>
                             </div>
