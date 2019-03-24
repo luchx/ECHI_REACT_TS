@@ -1,0 +1,134 @@
+@import '@styles/mixin.scss';
+@import '@styles/theme.scss';
+
+.oc-data {
+    padding: px2em(15);
+    background-color: #fff;
+    border-bottom: px2em(10) solid $borderColor;
+
+    .data-con {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: px2em(18);
+        overflow: hidden;
+        border: 1px solid $borderColor;
+        .date-tips {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: (100%/7);
+        height: 100%;
+        z-index: 2;
+        border-radius: px2em(17);
+        background-color: $color-active;
+        border: 1px solid #f00;
+        }
+        .day-tips {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: (100%/7);
+        height: 100%;
+        z-index: 2;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 20%;
+            border-bottom: 1px solid $color-active;
+        }
+        }
+    }
+    .data-item {
+        position: relative;
+        z-index: 3;
+        width: (100%/7);
+        height: px2em(34);
+        padding: px2em(11) 0;
+        font-size: px2em(10);
+        background-color: transparent;
+        color: $color-sub;
+        border-radius: px2em(17);
+        text-align: center;
+    }
+    .data-item.on {
+        background-color: $color-active;
+        color: #fff;
+    }
+    .day-item {
+        position: relative;
+        z-index: 3;
+        padding: px2em(5) 0;
+        width: (100%/7);
+        font-size: px2em(12);
+        color: $color-sub;
+        text-align: center;
+    }
+    .day-item.on {
+        color: $color-active;
+        &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 20%;
+        border-bottom: 1px solid $color-active;
+        }
+    }
+    }
+
+    .oc-contain {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: px2em(262);
+    bottom: $bottomHeight;
+    z-index: 9;
+
+    .contain-con {
+        padding-bottom: px2em(48);
+        min-height: 100%;
+    }
+    }
+
+    .book-null {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: px2em(50) 0;
+    color: $color-main;
+
+    .book-null-top {
+        font-size: px2em(16);
+    }
+
+    .book-null-center {
+        font-size: px2em(12);
+        color: $color-pale;
+        padding: px2em(5) 0 px2em(10);
+    }
+
+    .book-null-bottom {
+        display: inline-flex;
+        align-items: center;
+        font-size: px2em(14);
+        border-bottom: 1px solid $borderColor;
+
+        >span {
+        margin-left: px2em(5);
+        }
+    }
+}
+
+.schedule-wrapper {
+    .am-tabs-tab-bar-wrap {
+        display: none;
+    }
+}

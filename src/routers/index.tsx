@@ -42,6 +42,10 @@ const routers = [
         component: loadable('Member/children/Info')
     }, 
     {
+        path: '/schedule/:id',
+        component: loadable('Schedule')
+    }, 
+    {
         path: '*',
         component: loadable('Exception/404')
     }
