@@ -26,8 +26,8 @@ export function ApiGetVerifyCode(phone: string) {
  * @param {string} code
  * @returns
  */
-export function ApiMemberRegister(phone: string, code: string) {
-    let url = 'api/member/register';
+export function ApiMemberLogin(phone: string, code: string) {
+    let url = 'api/member/login';
     let data = {
         phone,
         code

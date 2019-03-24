@@ -3,7 +3,7 @@ import './index.scss';
 import Logo from '@img/logo.svg';
 import { Button, Toast } from 'antd-mobile'; 
 import { TestPhone } from '../../utils/validator';
-import { ApiGetVerifyCode, ApiMemberRegister } from '../../api';
+import { ApiGetVerifyCode, ApiMemberLogin } from '../../api';
 
 export interface ICheckState {
     focusName: string;
@@ -78,7 +78,7 @@ class Login extends Component<any, ICheckState> {
             return;
         }
         ApiGetVerifyCode(phone).then((result: any) => {
-            if (result.code === 0) {
+            if (result.status) {
                 Toast.info('验证码为:' + result.data, 2, () => { }, false);
                 this.getLeftTime();
             }else {
@@ -130,10 +130,18 @@ class Login extends Component<any, ICheckState> {
         if(code.length === 0) {
             return Toast.info('请输入验证码', 2, () => {}, false);
         }
-        ApiMemberRegister(phone, code).then((result: any) => {
-            Toast.info(result.message, 2);
-            if (result.code === 0) {
-                this.props.history.replace({pathname: `/member/${result.data.id}`});
+        ApiMemberLogin(phone, code).then((result: any) => {
+            if (result.status) {
+                if (result.data.created) {
+                    Toast.info('已为您自动创建帐号,正在登录...', 2);
+                } else {
+                    Toast.info('欢迎回来!!!', 2);
+                }
+                setTimeout(() => {
+                    this.props.history.replace({ pathname: `/member/${result.data.id}` });
+                }, 1500);
+            }else {
+                Toast.info(result.message, 2);
             }
         }).catch((err: any) => {
             console.log(err);
