@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import BottomBar from '../../components/BottomBar';
 import { ApiGetMemberInfo } from '../../api';
 import { local } from '../../utils/storage';
+import { Toast } from 'antd-mobile';
 
 export interface IState {
     member: any;
@@ -26,9 +27,13 @@ class Member extends Component<any, IState> {
     componentDidMount() {
         let memberId = local.get('echi_user_id');
         ApiGetMemberInfo(memberId).then((result: any) => {
-            this.setState({
-                member: result.data
-            })
+            if(result.status) {
+                this.setState({
+                    member: result.data
+                })
+            }else {
+                Toast.info(result.message, 2);
+            }
         }).catch((err: any) => {
             console.error(err);
         });
