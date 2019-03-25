@@ -91,7 +91,7 @@ class MemberInfo extends Component < any, IState > {
                             性别
                         </span>
                         <span className="fs-12 c-aaa">
-                            { member.genderDisplay }
+                            { member.gender_display }
                             <i className="iconfont">&#xe660;</i>
                         </span>
                     </div> */}
