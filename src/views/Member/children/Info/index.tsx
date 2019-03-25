@@ -4,6 +4,7 @@ import React, {
 import './index.scss';
 import { ApiGetMemberInfo, ApiModifyMember } from '../../../../api';
 import { Modal } from 'antd-mobile';
+import { local } from '../../../../utils/storage';
 
 const prompt = Modal.prompt;
 
@@ -22,7 +23,7 @@ class MemberInfo extends Component < any, IState > {
     }
 
     componentDidMount() {
-        let memberId = this.props.match.params.id;
+        let memberId = local.get('echi_user_id');
         ApiGetMemberInfo(memberId).then((result: any) => {
             this.setState({
                 member: result.data,
@@ -85,7 +86,7 @@ class MemberInfo extends Component < any, IState > {
                             <i className="iconfont">&#xe660;</i>
                         </span>
                     </div>
-                    <div className="link">
+                    {/* <div className="link">
                         <span className="fs-13">
                             性别
                         </span>
@@ -93,7 +94,7 @@ class MemberInfo extends Component < any, IState > {
                             { member.genderDisplay }
                             <i className="iconfont">&#xe660;</i>
                         </span>
-                    </div>
+                    </div> */}
                     <div className="link">
                         <span className="fs-13">
                             生日

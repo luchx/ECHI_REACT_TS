@@ -4,6 +4,7 @@ import Logo from '@img/logo.svg';
 import { Button, Toast } from 'antd-mobile'; 
 import { TestPhone } from '../../utils/validator';
 import { ApiGetVerifyCode, ApiMemberLogin } from '../../api';
+import { local } from '../../utils/storage';
 
 export interface ICheckState {
     focusName: string;
@@ -137,8 +138,9 @@ class Login extends Component<any, ICheckState> {
                 } else {
                     Toast.info('欢迎回来!!!', 2);
                 }
+                local.set('echi_user_id', result.data.id);
                 setTimeout(() => {
-                    this.props.history.replace({ pathname: `/member/${result.data.id}` });
+                    this.props.history.replace({ pathname: '/member' });
                 }, 1500);
             }else {
                 Toast.info(result.message, 2);
@@ -146,6 +148,13 @@ class Login extends Component<any, ICheckState> {
         }).catch((err: any) => {
             console.log(err);
         });
+    }
+
+    componentWillMount() {
+        const userId = local.get('echi_user_id');
+        if (userId) {
+            this.props.history.replace({ pathname: '/member' });
+        }
     }
 
     render() {

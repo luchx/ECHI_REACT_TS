@@ -3,6 +3,7 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import BottomBar from '../../components/BottomBar';
 import { ApiGetMemberInfo } from '../../api';
+import { local } from '../../utils/storage';
 
 export interface IState {
     member: any;
@@ -23,7 +24,7 @@ class Member extends Component<any, IState> {
     }
 
     componentDidMount() {
-        let memberId = this.props.match.params.id;
+        let memberId = local.get('echi_user_id');
         ApiGetMemberInfo(memberId).then((result: any) => {
             this.setState({
                 member: result.data
@@ -38,7 +39,7 @@ class Member extends Component<any, IState> {
         return (
             <div className="member-center">
                 <div className="member-block">
-                    <Link to={`/member/info/${member.id}`}>
+                    <Link to={`/member/info`}>
                         <div className="personal-info">
                             <div className="in-flex-common">
                                 <img src={member.avatar} className="avatar" />

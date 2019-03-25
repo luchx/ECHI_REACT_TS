@@ -33,16 +33,16 @@ const routers = [
         component: loadable('Login')
     }, 
     {
-        path: '/member/:id',
+        path: '/member',
         exact: true,
         component: loadable('Member')
     }, 
     {
-        path: '/member/info/:id',
+        path: '/member/info',
         component: loadable('Member/children/Info')
     }, 
     {
-        path: '/schedule/:id',
+        path: '/schedule',
         component: loadable('Schedule')
     }, 
     {
