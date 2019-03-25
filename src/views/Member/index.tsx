@@ -46,9 +46,9 @@ class Member extends Component<any, IState> {
                                     <div className="info">
                                     <div className="fs-20 fw-bold">{ member.nickname }</div>
                                     <div className="fs-11">
-                                        <span>鞋码{ member.shoeSize }</span>
+                                        <span>鞋码{ member.shoe_size }</span>
                                         <span className="dot">•</span>
-                                        <span>座位高度{ member.seatHeight }</span>
+                                        <span>座位高度{ member.seat_height }</span>
                                     </div>
                                 </div>
                             </div>
