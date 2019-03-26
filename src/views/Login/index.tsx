@@ -151,10 +151,7 @@ class Login extends Component<any, ICheckState> {
     }
 
     componentWillMount() {
-        const userId = local.get('echi_user_id');
-        if (userId) {
-            this.props.history.replace({ pathname: '/member' });
-        }
+        local.remove('echi_user_id');
     }
 
     render() {

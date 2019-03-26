@@ -91,7 +91,7 @@ class MemberInfo extends Component < any, IState > {
                             性别
                         </span>
                         <span className="fs-12 c-aaa">
-                            { member.gender_display }
+                            { member.genderDisplay }
                             <i className="iconfont">&#xe660;</i>
                         </span>
                     </div> */}
@@ -112,18 +112,18 @@ class MemberInfo extends Component < any, IState > {
                                 { text: '取消' },
                                 {
                                     text: '确定', onPress: (...argus) => {
-                                        this.modifyInfo(argus, 'shoe_size');
+                                        this.modifyInfo(argus, 'shoeSize');
                                     }
                                 }
                             ],
-                                'default', member.shoe_size)
+                                'default', member.shoeSize)
                         }
                     >
                         <span className="fs-13">
                             鞋码
                         </span>
                         <span className="fs-12 c-aaa">
-                            {member.shoe_size}
+                            {member.shoeSize}
                             <i className="iconfont">&#xe660;</i>
                         </span>
                     </div>
@@ -133,18 +133,18 @@ class MemberInfo extends Component < any, IState > {
                                 { text: '取消' },
                                 {
                                     text: '确定', onPress: (...argus) => {
-                                        this.modifyInfo(argus, 'seat_height');
+                                        this.modifyInfo(argus, 'seatHeight');
                                     }
                                 }
                             ],
-                                'default', member.seat_height)
+                                'default', member.seatHeight)
                         }
                     >
                         <span className="fs-13">
                             座位高度
                         </span>
                         <span className="fs-12 c-aaa">
-                            {member.seat_height}
+                            {member.seatHeight}
                             <i className="iconfont">&#xe660;</i>
                         </span>
                     </div>
