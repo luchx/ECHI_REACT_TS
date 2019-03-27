@@ -5,6 +5,7 @@ import './index.scss';
 import { ApiGetMemberInfo, ApiModifyMember } from '../../../../api';
 import { Modal } from 'antd-mobile';
 import { local } from '../../../../utils/storage';
+import { selectFileImage } from '../../../../utils';
 
 const prompt = Modal.prompt;
 
@@ -35,7 +36,7 @@ class MemberInfo extends Component < any, IState > {
     }
 
 
-    // 修改用户姓名
+    // 修改用户
     modifyInfo(value: any, key: string) {
         if (value[0].length !== 0) {
             const memberId = this.state.memberId;
@@ -55,6 +56,19 @@ class MemberInfo extends Component < any, IState > {
         }
     }
 
+    // 上传图片
+    uploadImage(event: any) {
+        let file = event.target.files[0];
+        selectFileImage(file, img => {
+            let { member } = this.state;
+            member['avatar'] = img;
+            this.setState({
+                member
+            });
+            this.modifyInfo([img], 'avatar');
+        });
+    }
+
     render() {
         const member = this.state.member;
         return (
@@ -63,7 +77,10 @@ class MemberInfo extends Component < any, IState > {
                     <div className="link">
                         <span className="fs-13">头像</span>
                         <div className="value-unchangable">
-                            <img className="avastar" src={member.avatar}/>
+                            <div className="upload-wrapper">
+                                <input className="img-file" type="file" accept="image/*" onChange={($event) => this.uploadImage($event)} />
+                                <img className="avastar" src={member.avatar} />
+                            </div>
                             <i className="iconfont">&#xe660;</i>
                         </div>
                     </div>

@@ -8,6 +8,7 @@
   "dependencies": {
     "antd-mobile": "^2.2.9",
     "axios": "^0.18.0",
+    "exif-js": "^2.3.0",
     "fastclick": "^1.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",

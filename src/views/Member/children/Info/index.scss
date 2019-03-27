@@ -7,15 +7,37 @@
     a:hover {
         text-decoration: none;
     }
-    .avastar {
-        height: px2em(30);
-        width: px2em(30);
-        margin-right: 10px;
-    }
     .value-unchangable {
         display: inline-flex;
         align-items: center;
     }
+
+    .upload-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: px2em(30);
+        width: px2em(30);
+        margin-right: 10px;
+        .avastar {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+        .img-file {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            opacity: 0;
+            z-index: 50;
+            width: 100%;
+        }
+    }
+
     .link-group {
         margin-bottom: px2em(10);
         background: #fff;
