@@ -85,17 +85,18 @@
     }
 
     .oc-contain {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: px2em(262);
-    bottom: $bottomHeight;
-    z-index: 9;
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: px2em(262);
+        bottom: $bottomHeight;
+        z-index: 9;
+        overflow: hidden;
+        overflow-y: auto;
 
-    .contain-con {
-        padding-bottom: px2em(48);
-        min-height: 100%;
-    }
+        .contain-con {
+            min-height: 100%;
+        }
     }
 
     .book-null {

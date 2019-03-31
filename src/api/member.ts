@@ -19,6 +19,19 @@ export function ApiGetVerifyCode(phone: string) {
 }
 
 /**
+ * 获取日期时间戳
+ *
+ * @export
+ * @returns
+ */
+export function ApiGetTime() {
+    let url = 'api/member/getTime';
+    return service.get({
+        url
+    })
+}
+
+/**
  * 注册用户
  *
  * @export
