@@ -101,6 +101,10 @@ $ yarn build         # Compiles and minifies for production
 #### 2019-3-27 新增登录界面
   - 添加图片转换base64上传
 
+#### 2019-3-31 新增课程表页面
+  - 添加课程表页面
+  - 获取课程表数据接口
+
 
 ## 支持环境
 

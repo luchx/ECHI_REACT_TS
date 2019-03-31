@@ -1,0 +1,91 @@
+@import '@styles/mixin.scss';
+@import '@styles/theme.scss';
+
+.contain-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: px2em(15);
+    font-size: px2em(14);
+    border-bottom: px2em(10) solid $color-null;
+    .item-arrow {
+        position: absolute;
+        top: px2em(-28);
+        width: px2em(56);
+        height: px2em(56);
+        font-size: px2em(8);
+        padding: px2em(5);
+        background-color: $color-active;
+        color: #fff;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .arrow-full{
+        background-color: $color-pale;
+    }
+    .arrow-nervous{
+        background-color: #fe7b1a;
+    }
+    .item-arrow-left {
+        left: px2em(-28);
+        transform: rotate(-45deg);
+    }
+    .item-arrow-right {
+        right: px2em(-28);
+        transform: rotate(45deg);
+    }
+}
+.contain-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: px2em(80);
+    height: px2em(80);
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: $color-null;
+}
+
+.contain-desc {
+    position: absolute;
+    top: px2em(15);
+    bottom: px2em(15);
+    left: px2em(105);
+    right: px2em(15);
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .contain-btn-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: px2em(70);
+    }
+    .contain-follow {
+        margin-top: px2em(5);
+        overflow: hidden;
+    }
+    .contain-tips {
+        display: flex;
+        align-items: center;
+        min-height: px2em(28);
+        >.oc-btn {
+        margin: px2em(5) px2em(5) px2em(5) 0;
+        }
+    }
+}
+.contain-btn {
+    position: relative;
+    z-index: 1;
+    width: px2em(60);
+    text-align: right;
+    >button {
+        width: px2em(60);
+    }
+}
