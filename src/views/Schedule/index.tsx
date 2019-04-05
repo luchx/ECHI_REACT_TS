@@ -5,6 +5,7 @@ import Banner_01 from '@img/banner_01.png';
 import Banner_02 from '@img/banner_02.png';
 import { ApiGetTime } from '../../api';
 import dayjs from 'dayjs';
+import { Link } from 'react-router-dom';
 import ListItem from '../../components/ListItem';
 import { ApiGetProject } from '../../api/project';
 import { Toast } from 'antd-mobile';
@@ -114,7 +115,9 @@ class Schedule extends Component<any, IState> {
                         {
                             this.state.listData.map((item, index) => {
                                 return (
-                                    <ListItem itemData={item} key={index}></ListItem>
+                                    <Link key={index} to={'/subscribe'}>
+                                        <ListItem itemData={item}></ListItem>
+                                    </Link>
                                 )
                            })
                         }

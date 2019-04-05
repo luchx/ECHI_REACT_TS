@@ -81,6 +81,17 @@ $ yarn start         # 访问 http://localhost:3000
 $ yarn build         # Compiles and minifies for production
 ```
 
+## 部分界面
+
+<div align="center">
+   <p>登录界面</p>
+   <img src="static/登录界面.png"  alt="登录界面" />
+   <p>个人信息</p>
+   <img src="static/个人信息.png"  alt="个人信息" />
+   <p>课表页面</p>
+   <img src="static/课表页面.png"  alt="课表页面" />
+</div>
+
 
 > 开发历程
 

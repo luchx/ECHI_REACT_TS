@@ -46,6 +46,10 @@ const routers = [
         component: loadable('Schedule')
     }, 
     {
+        path: '/subscribe',
+        component: loadable('Subscribe')
+    }, 
+    {
         path: '*',
         component: loadable('Exception/404')
     }
