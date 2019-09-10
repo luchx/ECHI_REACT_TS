@@ -1,0 +1,70 @@
+@import '@styles/mixin.scss';
+@import '@styles/theme.scss';
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    padding: 0.104rem 0 0.07rem;
+    height: $bottomHeight;
+    overflow: hidden;
+    border-top: 1px solid $color-null;
+    background-color: #fff;
+
+    .bottom-item.on {
+        color: $color-active;
+    }
+
+    .bottom-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #b2b2b2;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .bottom-icon {
+        height: px2em(25);
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .iconfont {
+            font-size: px2em(22);
+        }
+
+        .bottom-badge {
+            position: absolute;
+            left: 100%;
+            z-index: 999;
+            top: -0.02rem;
+            margin-left: -0.15rem;
+
+            .badge-icon {
+                color: #fff;
+                font-size: 12px;
+                position: relative;
+                display: inline-block;
+                border-radius: 1000px;
+                line-height: 1;
+                padding: px2em(3) px2em(6);
+                white-space: nowrap;
+                background-color: $color-active;
+            }
+        }
+    }
+
+    .bottom-text {
+        display: inline-block;
+        font-size: px2em(12);
+    }
+}
